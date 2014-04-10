@@ -2,16 +2,23 @@ num1=$1
 num2=$2
 echo $num1 $num2 > tmp_newfile
 
-
 echo "Script to add numbers"
-if [$3="add"]; then
+if [$3=="add"]; then
 	echo "Script to add numbers"
 	cat tmp_newfile | awk '{print $1+$2}'
 	else 
-	
-if [$3="sum"]; then
+if [$3="multiply"]; then
 	echo "Script to multiply numbers"
 	cat tmp_newfile | awk '{print $1*$2}'
+	else
+if [$3=="divide"]; then
+	echo "Script to divide numbers"
+	cat tmp_newfile | awk '{print $1/$2}'
+if [$3=="subtract"]; then
+        echo "Script to subtract numbers"
+        cat tmp_newfile | awk '{print $1-$2}'
+
+fi
 fi
 fi
 
